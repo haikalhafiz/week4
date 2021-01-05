@@ -10,22 +10,24 @@
 		        }
 		
 		  button{
-			     background-color: purple;
+			           background-color: purple;
                  color: black;
                  padding: 15px 32px;
-               
-                 display: inline-block;
                  font-size: 30px;
-		       }
-		 body{
+                 }
+		   body {
 		 	    background-color: rgb(255, 255, 204) ;
 		      }
+
 	</style>
 </head>
 <body>
 	<h1>Rock Paper Scissors</h1>
 
 	<h2> Choose your weapon </h2>
+
+  <h3 id="score"></h3>
+  <p id="message"></p>
 
 	<br>
 
@@ -53,17 +55,24 @@
            
             if (weapon=="Rock"){
             	if(compWeapon == "Rock"){
-            		alert("Computer select " + compWeapon+ " .It's a draw!!Your score is "+myScore + " : " +" Computer score is "+ compScore+" .")
+
+            		document.getElementById("message").innerHTML = "Computer select " + compWeapon
+                document.getElementById("score").innerHTML = "It's a draw!!Your score is "+myScore + " : " +" Computer score is "+ compScore+" ."
             	}
 
             	else if (compWeapon == "Paper"){
                 compScore++;
-                     alert("Computer select " + compWeapon + " .You lose!!Your score is "+myScore +" : " +" Computer score is "+ compScore+" .")
+
+                 document.getElementById("message").innerHTML = "Computer select " + compWeapon ;
+                 document.getElementById("score").innerHTML = "You lose!!Your score is "+myScore +" : " +" Computer score is "+ compScore+" ."
+                     
 
             	}else{
                 myScore++;
-            		alert("Computer select " + compWeapon + " .You win!!.You score is "+ myScore+" : Computer Score "+ compScore)
 
+                 document.getElementById("message").innerHTML = "Computer select " + compWeapon ;
+                 document.getElementById("score").innerHTML = " .You win!!.You score is "+ myScore+" : Computer Score "+ compScore ;
+                     
             	}
 
 
@@ -73,27 +82,41 @@
 
             	if(compWeapon=="Rock"){
                 myScore++;
-           		 alert("Computer select " + compWeapon + " . You win!!.You score is "+ myScore+" : Computer Score "+ compScore)
-}
+
+                document.getElementById("message").innerHTML = "Computer select " + compWeapon;
+                 document.getElementById("score").innerHTML = " . You win!!.You score is "+ myScore+" : Computer Score "+ compScore;           	
+              }
+
             	else if (compWeapon=="Paper"){
-           		alert("Computer select "+ compWeapon + " .It's a draw!!Your score is "+myScore + " : " +" Computer score is "+ compScore+" .")
+                  document.getElementById("message").innerHTML = "Computer select "+ compWeapon;
+                 document.getElementById("score").innerHTML = " .It's a draw!!Your score is "+myScore + " : " +" Computer score is "+ compScore+" ."
+           		
             	}
             	else {
                  compScore++;
-            		 alert("Computer select " + compWeapon + " .You lose!!Your score is "+myScore + " : " +" Computer score is "+ compScore+" .")
+                  document.getElementById("message").innerHTML = "Computer select " + compWeapon ;
+                 document.getElementById("score").innerHTML = " .You lose!!Your score is "+myScore + " : " +" Computer score is "+ compScore+" ."
+              
            	         }
               }
            if (weapon == "Scissors") {
            	     if(compWeapon=="Rock"){
-           		 alert("Computer select " + compWeapon + " . You lose!!Your score is "+myScore +" : " +" Computer score is "+ compScore+" .")
+                  compScore++;
+                  document.getElementById("message").innerHTML = "Computer select " + compWeapon;
+                 document.getElementById("score").innerHTML = " . You lose!!Your score is "+myScore +" : " +" Computer score is "+ compScore+" ."
            	     }
-             	else if (compWeapon=="Paper"){
-                myScore++;
-           		alert("Computer select "+ compWeapon + " .You win!!.You score is "+ myScore+" : Computer Score "+ compScore)
 
+             	else if (compWeapon=="Paper"){
+
+              
+           		 myScore++;
+
+                document.getElementById("message").innerHTML = "Computer select " + compWeapon;
+                 document.getElementById("score").innerHTML = " . You win!!.You score is "+ myScore+" : Computer Score "+ compScore;   
              	}
             	else {
-           		 alert("Computer select " + compWeapon + " .It's a draw!!Your score is "+myScore + " : " +" Computer score is "+ compScore+" .")
+           		 document.getElementById("message").innerHTML = "Computer select " + compWeapon
+                document.getElementById("score").innerHTML = "It's a draw!!Your score is "+myScore + " : " +" Computer score is "+ compScore+" ."
             	}
                 }
 	          }
